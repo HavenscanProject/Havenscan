@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HavenScan | Home Monitoring Blueprint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span class="logo">HavenScan</span>
+      </div>
+      <nav class="nav-actions">
+        <a href="#map" class="ghost">Explore the home</a>
+        <a href="#contact" class="solid">Request a demo</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <p class="pill">Modern home intelligence</p>
+          <h1>Your home, reimagined as a living system that protects, learns, and acts with you.</h1>
+          <p class="muted">
+            HavenScan turns every critical zone into a calm, responsive space. Scroll to watch the home expand, click a
+            room to see what is monitored, and learn how automation keeps you ahead of risk.
+          </p>
+          <div class="hero-actions">
+            <a class="solid" href="#map">Start scrolling</a>
+            <a class="ghost" href="#zones">See coverage</a>
+          </div>
+          <div class="status">
+            <span class="status-dot"></span>
+            <span>Live protection across 7 zones</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="map" class="experience">
+        <div class="sticky">
+          <!-- CSS-only selection via radios -->
+          <input type="radio" name="zone" id="zone-entry" checked />
+          <input type="radio" name="zone" id="zone-living" />
+          <input type="radio" name="zone" id="zone-kitchen" />
+          <input type="radio" name="zone" id="zone-garage" />
+          <input type="radio" name="zone" id="zone-utility" />
+          <input type="radio" name="zone" id="zone-backyard" />
+          <input type="radio" name="zone" id="zone-roof" />
+
+          <div class="columns">
+            <div class="left">
+              <div class="blueprint">
+                <div class="blueprint-glow"></div>
+                <svg viewBox="0 0 1200 720" class="blueprint-svg" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="frame" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#7ce7ff" stop-opacity="0.8" />
+                      <stop offset="100%" stop-color="#8cb1ff" stop-opacity="0.4" />
+                    </linearGradient>
+                    <radialGradient id="core" cx="50%" cy="50%" r="60%">
+                      <stop offset="0%" stop-color="#8ed1ff" stop-opacity="0.45" />
+                      <stop offset="60%" stop-color="#0d1a2b" stop-opacity="0.2" />
+                      <stop offset="100%" stop-color="transparent" />
+                    </radialGradient>
+                  </defs>
+                  <rect x="80" y="180" width="1040" height="420" rx="38" ry="38" fill="url(#core)" />
+                  <rect
+                    x="120"
+                    y="220"
+                    width="960"
+                    height="340"
+                    rx="28"
+                    ry="28"
+                    stroke="url(#frame)"
+                    stroke-width="6"
+                    fill="rgba(12,21,34,0.6)"
+                  />
+                  <path
+                    d="M200 260 L1000 260 L1000 520 L200 520 Z M640 260 L640 520 M200 380 L1000 380"
+                    stroke="rgba(180,210,255,0.35)"
+                    stroke-width="3"
+                    stroke-dasharray="8 10"
+                    fill="none"
+                  />
+                  <path
+                    d="M120 400 L80 400 L80 320 L120 320 M1080 320 L1120 320 L1120 400 L1080 400"
+                    stroke="rgba(140,200,255,0.25)"
+                    stroke-width="3"
+                    fill="none"
+                  />
+                  <circle cx="600" cy="160" r="70" stroke="rgba(140,200,255,0.25)" stroke-width="3" fill="none" />
+                  <circle cx="600" cy="560" r="70" stroke="rgba(140,200,255,0.2)" stroke-width="2" fill="none" />
+                </svg>
+                <div class="zone-layer">
+                  <label for="zone-entry" class="zone-pin" style="left: 22%; top: 56%">
+                    <span class="zone-dot"></span>
+                    <span class="zone-label">Perimeter & Entry</span>
+                  </label>
+                  <label for="zone-living" class="zone-pin" style="left: 42%; top: 48%">
+                    <span class="zone-dot"></span>
+                    <span class="zone-label">Living Core</span>
+                  </label>
+                  <label for="zone-kitchen" class="zone-pin" style="left: 60%; top: 55%">
+                    <span class="zone-dot"></span>
+                    <span class="zone-label">Kitchen & Heat</span>
+                  </label>
+                  <label for="zone-garage" class="zone-pin" style="left: 80%; top: 58%">
+                    <span class="zone-dot"></span>
+                    <span class="zone-label">Garage & Vehicles</span>
+                  </label>
+                  <label for="zone-utility" class="zone-pin" style="left: 50%; top: 72%">
+                    <span class="zone-dot"></span>
+                    <span class="zone-label">Mechanical & Water</span>
+                  </label>
+                  <label for="zone-backyard" class="zone-pin" style="left: 72%; top: 32%">
+                    <span class="zone-dot"></span>
+                    <span class="zone-label">Backyard & Outdoor</span>
+                  </label>
+                  <label for="zone-roof" class="zone-pin" style="left: 45%; top: 20%">
+                    <span class="zone-dot"></span>
+                    <span class="zone-label">Roofline & Weather</span>
+                  </label>
+                </div>
+              </div>
+              <div class="scroll-hint">
+                <span class="hint-dot"></span>
+                The blueprint expands as you scroll
+              </div>
+            </div>
+
+            <div class="right">
+              <div class="panel-stack">
+                <article class="panel" id="panel-entry">
+                  <div class="panel-pill">Live zone • Doors, windows, and approach paths</div>
+                  <h3>Perimeter & Entry</h3>
+                  <p class="muted">
+                    Guard the shell of the home with layered sensing — force, glass break, and approach detection tuned
+                    to real movement, not pets or wind.
+                  </p>
+                  <div class="panel-grid">
+                    <div>
+                      <p class="overline">Signals watched</p>
+                      <ul>
+                        <li>Door forced or ajar</li>
+                        <li>Glass vibration or break</li>
+                        <li>Approach within 12ft</li>
+                        <li>Unexpected unlock</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p class="overline">Automations</p>
+                      <ul>
+                        <li>Auto-lock + notify household</li>
+                        <li>Discreet chime for friendly arrivals</li>
+                        <li>Escalate to lights + siren on force events</li>
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="panel" id="panel-living">
+                  <div class="panel-pill">Live zone • Family room and main level airflow</div>
+                  <h3>Living Core</h3>
+                  <p class="muted">
+                    Keep shared spaces healthy and calm: detect smoke/CO, air quality swings, or movement when nobody
+                    should be inside.
+                  </p>
+                  <div class="panel-grid">
+                    <div>
+                      <p class="overline">Signals watched</p>
+                      <ul>
+                        <li>Smoke / CO rise</li>
+                        <li>Air quality dip (PM2.5, VOC)</li>
+                        <li>Unexpected occupancy</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p class="overline">Automations</p>
+                      <ul>
+                        <li>Pause HVAC + ventilate</li>
+                        <li>Message trusted circle</li>
+                        <li>Scene: path-to-exit lighting</li>
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="panel" id="panel-kitchen">
+                  <div class="panel-pill">Live zone • Cooktops, water, and utilities</div>
+                  <h3>Kitchen & Heat</h3>
+                  <p class="muted">
+                    Watch for the most common in-home risks — fire, water, and misuse. Pair appliance states with
+                    thermal and moisture signals.
+                  </p>
+                  <div class="panel-grid">
+                    <div>
+                      <p class="overline">Signals watched</p>
+                      <ul>
+                        <li>Cooktop left on</li>
+                        <li>Thermal spike near stove</li>
+                        <li>Sink or dishwasher leak</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p class="overline">Automations</p>
+                      <ul>
+                        <li>Shut water at main</li>
+                        <li>Nudge to phone + voice</li>
+                        <li>Vent hood + fans on</li>
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="panel" id="panel-garage">
+                  <div class="panel-pill">Live zone • Garage doors, EVs, and storage</div>
+                  <h3>Garage & Vehicles</h3>
+                  <p class="muted">
+                    Blend physical security with safety: track garage doors, EV charging heat, and entry from garage to
+                    interior.
+                  </p>
+                  <div class="panel-grid">
+                    <div>
+                      <p class="overline">Signals watched</p>
+                      <ul>
+                        <li>Garage left open</li>
+                        <li>Charge port heat</li>
+                        <li>Motion after curfew</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p class="overline">Automations</p>
+                      <ul>
+                        <li>Close door after dwell time</li>
+                        <li>Stage exterior flood lights</li>
+                        <li>Lock mudroom door</li>
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="panel" id="panel-utility">
+                  <div class="panel-pill">Live zone • Mechanical room, sump, mains</div>
+                  <h3>Mechanical & Water</h3>
+                  <p class="muted">
+                    Critical systems telemetry in one view: mains water, boiler or furnace temps, sump level, and panel
+                    state.
+                  </p>
+                  <div class="panel-grid">
+                    <div>
+                      <p class="overline">Signals watched</p>
+                      <ul>
+                        <li>Water flow anomaly</li>
+                        <li>Boiler temp drift</li>
+                        <li>Sump rising fast</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p class="overline">Automations</p>
+                      <ul>
+                        <li>Shutoff + alert</li>
+                        <li>Spin up fan or pump</li>
+                        <li>Dispatch help with context</li>
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="panel" id="panel-backyard">
+                  <div class="panel-pill">Live zone • Patio, pool, perimeter</div>
+                  <h3>Backyard & Outdoor</h3>
+                  <p class="muted">
+                    Extend safety outdoors with privacy-preserving sensing — lidar zones, pool movement, and gate
+                    status.
+                  </p>
+                  <div class="panel-grid">
+                    <div>
+                      <p class="overline">Signals watched</p>
+                      <ul>
+                        <li>Gate opened</li>
+                        <li>Pool disturbance</li>
+                        <li>Perimeter crossing</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p class="overline">Automations</p>
+                      <ul>
+                        <li>Illuminate safe path</li>
+                        <li>Sound poolside tone</li>
+                        <li>Record short clip with consent modes</li>
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="panel" id="panel-roof">
+                  <div class="panel-pill">Live zone • Attic, gutters, storms</div>
+                  <h3>Roofline & Weather</h3>
+                  <p class="muted">
+                    Track moisture and thermal changes in the attic and roofline to catch issues before they spread
+                    indoors.
+                  </p>
+                  <div class="panel-grid">
+                    <div>
+                      <p class="overline">Signals watched</p>
+                      <ul>
+                        <li>Attic humidity spike</li>
+                        <li>Gutter overflow flow</li>
+                        <li>Hail or wind alerts</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p class="overline">Automations</p>
+                      <ul>
+                        <li>Close skylights</li>
+                        <li>Schedule check-in reminder</li>
+                        <li>Elevate risk state for the night</li>
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="zones" class="section">
+        <div class="section-header">
+          <p class="pill">Coverage</p>
+          <h2>Every part of the home stays in view</h2>
+          <p class="muted max-600">
+            Click a zone above, then dive deeper here. HavenScan blends privacy-first sensing, predictive alerts, and
+            immediate automations so you can go from signal to action without noise.
+          </p>
+        </div>
+        <div class="zone-grid">
+          <article class="card compact">
+            <p class="pill subtle">Doors, windows, and approach paths</p>
+            <h4>Perimeter & Entry</h4>
+            <p class="muted small">Layered sensing at the shell — force, glass, and approaches.</p>
+          </article>
+          <article class="card compact">
+            <p class="pill subtle">Family room and airflow</p>
+            <h4>Living Core</h4>
+            <p class="muted small">Health and calm for shared spaces: smoke, CO, and occupancy.</p>
+          </article>
+          <article class="card compact">
+            <p class="pill subtle">Cooktops, water, utilities</p>
+            <h4>Kitchen & Heat</h4>
+            <p class="muted small">Fire and water protection with appliance and thermal context.</p>
+          </article>
+          <article class="card compact">
+            <p class="pill subtle">Garage doors, EVs, storage</p>
+            <h4>Garage & Vehicles</h4>
+            <p class="muted small">Secure the garage and the path into the home.</p>
+          </article>
+          <article class="card compact">
+            <p class="pill subtle">Mechanical room, sump, mains</p>
+            <h4>Mechanical & Water</h4>
+            <p class="muted small">Telemetry for the systems that keep the home running.</p>
+          </article>
+          <article class="card compact">
+            <p class="pill subtle">Patio, pool, perimeter</p>
+            <h4>Backyard & Outdoor</h4>
+            <p class="muted small">Outdoor safety that respects privacy and consent modes.</p>
+          </article>
+          <article class="card compact">
+            <p class="pill subtle">Attic, gutters, storms</p>
+            <h4>Roofline & Weather</h4>
+            <p class="muted small">Catch moisture and storm risk early, before it spreads inside.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <p class="pill">How it works</p>
+          <h2>Sense. Decide. Act.</h2>
+          <p class="muted max-600">
+            Edge intelligence meets cloud context. Each trigger ships with a clear narrative of what HavenScan saw,
+            decided, and did — so you trust every alert.
+          </p>
+        </div>
+        <div class="step-grid">
+          <article class="card">
+            <div class="pill">Always-on</div>
+            <h4>Sense & fuse</h4>
+            <p class="muted">
+              Blend low-light vision, acoustic, thermal, and contact sensing into one adaptive signal that ignores pets,
+              wind, and daily routines.
+            </p>
+          </article>
+          <article class="card">
+            <div class="pill">Context aware</div>
+            <h4>Decide with context</h4>
+            <p class="muted">
+              Risk models weigh time of day, who is home, and recent events before escalating — delivering only
+              high-confidence alerts.
+            </p>
+          </article>
+          <article class="card">
+            <div class="pill">Automated</div>
+            <h4>Act instantly</h4>
+            <p class="muted">
+              Trigger scenes, shut valves, lock doors, and notify your circle with a clear storyboard of what HavenScan
+              saw and did.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="cta">
+        <div>
+          <p class="pill">Ready to see it live?</p>
+          <h2>Build your connected, calm home with HavenScan.</h2>
+          <p class="muted">
+            We tailor the monitoring blueprint to your space — from single-family homes to multi-unit residences — and
+            integrate with the systems you already use.
+          </p>
+          <div class="hero-actions">
+            <a class="solid" href="mailto:founders@havenscan.com">Book a walkthrough</a>
+            <a class="ghost" href="#map">Replay the experience</a>
+          </div>
+        </div>
+        <div class="cta-card">
+          <div class="pill subtle">Snapshot</div>
+          <ul>
+            <li>7 monitored zones out of the box</li>
+            <li>Privacy-first sensors and consented clips</li>
+            <li>Automations that adapt to routines</li>
+            <li>Storyboards for every alert</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+
