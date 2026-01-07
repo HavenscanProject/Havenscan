@@ -10,9 +10,20 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would send data to a backend
-    console.log({ email, userType });
-    setSubmitted(true);
+    (async () => {
+      try {
+        const res = await fetch("/api/waitlist", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, userType }),
+        });
+        if (!res.ok) throw new Error("Failed to submit");
+        setSubmitted(true);
+      } catch (err) {
+        console.error(err);
+        alert("There was an error submitting the form. Please try again later.");
+      }
+    })();
   };
 
   return (

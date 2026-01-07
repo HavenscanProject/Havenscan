@@ -14,23 +14,23 @@ export default function About() {
   const teamMembers: TeamMember[] = [
     {
       name: "Kingshuk Roy", 
-      bio: "Hardware, software, and AI systems expert with a passion for building innovative solutions.",
+      bio: "11th Grader at Enloe High School. With a passion for building innovative solutions, Kingshuk is focused on hardware, software, and AI applications.",
     },
     {
       name: "Naren Pai",
-      bio: "User experience and system architecture specialist focused on creating intuitive interfaces.",
+      bio: "11th Grader at Enloe High School. System architecture specialist using technical expertise to build real designs.",
     },
     {
       name: "Vansh Jain",
-      bio: "Data analysis and real-world testing professional ensuring product reliability and accuracy.",
+      bio: "11th Grader at Enloe High School. Data analysis and real-world testing professional ensuring product reliability and accuracy.",
     },
     {
       name: "Madhuram Sharma",
-      bio: "Business development and partnerships leader driving growth and strategic initiatives.",
+      bio: "11th Grader at Enloe High School. Business development and partnerships leader driving growth.",
     },
     {
       name: "Saicharan Karthikeyan",
-      bio: "Contributing expertise to make HavenScan a comprehensive home health monitoring solution.",
+      bio: "11th Grader at North Carolina School of Science and Math Durham. Contributing expertise to make HavenScan a comprehensive home health monitoring solution.",
     },
   ];
   return (
@@ -57,13 +57,13 @@ export default function About() {
           <section className="mb-12">
             <h2 className="text-3xl font-semibold text-gray-900 mb-4">Origin</h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-4">
-              Traditional home inspections are periodic and reactive—they identify problems after damage occurs. While
+              Traditional home inspections are slow and reactive. While
               individual sensors exist for specific hazards, there was no unified system for continuous home health
               monitoring.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed">
               HavenScan was built to solve this: a modular, intelligent system that provides continuous monitoring,
-              context-aware analysis, and actionable insights—all in one platform.
+              context-aware analysis, and actionable insights all available in a single app.
             </p>
           </section>
 
@@ -71,16 +71,6 @@ export default function About() {
             <h2 className="text-3xl font-semibold text-gray-900 mb-8">Team</h2>
             {/* Change animationStyle to try different effects: "3d-tilt" | "glassmorphism" | "flip" | "magnetic" | "gradient" | "floating" */}
             <TeamCards members={teamMembers} animationStyle="3d-tilt" />
-          </section>
-
-          <section className="mb-12">
-            <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
-              <p className="text-sm text-gray-600 font-medium mb-2">Recognition</p>
-              <p className="text-gray-700">
-                HavenScan is recognized by the Conrad Challenge, an international competition that encourages
-                entrepreneurs to address global challenges through innovation.
-              </p>
-            </div>
           </section>
         </div>
 
