@@ -2,6 +2,20 @@
 
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
+
+// Dynamically import CAD viewer to avoid SSR issues
+const CADModelViewer = dynamic(() => import("./components/CADModelViewer"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full aspect-square max-w-2xl mx-auto rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+        <p className="text-gray-600 font-medium">Loading viewer...</p>
+      </div>
+    </div>
+  ),
+});
 
 function useScrollFadeIn() {
   const [isVisible, setIsVisible] = useState(false);
@@ -256,6 +270,15 @@ export default function Home() {
               HavenScan combines hardware, software, and AI to deliver actionable insights about your home's health.
             </p>
           </div>
+
+          {/* CAD Model Viewer */}
+          <div className="mb-16">
+            <CADModelViewer
+              showPlaceholder={true}
+              alt="HavenScan Central Hub with Sensor Modules"
+            />
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             <div className="bg-white border border-gray-200 rounded-xl p-6">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">

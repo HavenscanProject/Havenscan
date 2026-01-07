@@ -1,6 +1,37 @@
+"use client";
+
 import Link from "next/link";
+import TeamCards, { TeamMember } from "../components/TeamCards";
 
 export default function About() {
+  // Team members data - update with your actual team info
+  const teamMembers: TeamMember[] = [
+    {
+      name: "Team Member 1",
+      role: "Engineering & Development",
+      bio: "Hardware, software, and AI systems expert with a passion for building innovative solutions.",
+    },
+    {
+      name: "Team Member 2",
+      role: "Product & Design",
+      bio: "User experience and system architecture specialist focused on creating intuitive interfaces.",
+    },
+    {
+      name: "Team Member 3",
+      role: "Research & Validation",
+      bio: "Data analysis and real-world testing professional ensuring product reliability and accuracy.",
+    },
+    {
+      name: "Team Member 4",
+      role: "Strategy & Operations",
+      bio: "Business development and partnerships leader driving growth and strategic initiatives.",
+    },
+    {
+      name: "Team Member 5",
+      role: "Additional Role",
+      bio: "Contributing expertise to make HavenScan a comprehensive home health monitoring solution.",
+    },
+  ];
   return (
     <div className="min-h-screen bg-white">
       <section className="pt-24 pb-20 px-6 sm:px-8 lg:px-12 max-w-4xl mx-auto">
@@ -36,25 +67,9 @@ export default function About() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-3xl font-semibold text-gray-900 mb-6">Team</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
-                <h3 className="font-semibold text-gray-900 mb-1">Engineering & Development</h3>
-                <p className="text-gray-600 text-sm">Hardware, software, and AI systems</p>
-              </div>
-              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
-                <h3 className="font-semibold text-gray-900 mb-1">Product & Design</h3>
-                <p className="text-gray-600 text-sm">User experience and system architecture</p>
-              </div>
-              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
-                <h3 className="font-semibold text-gray-900 mb-1">Research & Validation</h3>
-                <p className="text-gray-600 text-sm">Data analysis and real-world testing</p>
-              </div>
-              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
-                <h3 className="font-semibold text-gray-900 mb-1">Strategy & Operations</h3>
-                <p className="text-gray-600 text-sm">Business development and partnerships</p>
-              </div>
-            </div>
+            <h2 className="text-3xl font-semibold text-gray-900 mb-8">Team</h2>
+            {/* Change animationStyle to try different effects: "3d-tilt" | "glassmorphism" | "flip" | "magnetic" | "gradient" | "floating" */}
+            <TeamCards members={teamMembers} animationStyle="3d-tilt" />
           </section>
 
           <section className="mb-12">
