@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   title: "HavenScan | Continuous Home Health Monitoring",
   description:
     "Detect hidden risks before they become costly or dangerous. A unified system for continuous home health monitoring.",
+  icons: {
+    icon: "/HavenScanLogo.jpg",
+    shortcut: "/HavenScanLogo.jpg",
+    apple: "/HavenScanLogo.jpg",
+  },
 };
 
 export default function RootLayout({

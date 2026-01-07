@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
+import MobileAppShowcase from "./components/MobileAppShowcase";
 
 // Dynamically import CAD viewer to avoid SSR issues
 const CADModelViewer = dynamic(() => import("./components/CADModelViewer"), {
@@ -53,6 +54,7 @@ export default function Home() {
   const problemFade = useScrollFadeIn();
   const solutionFade = useScrollFadeIn();
   const howItWorksFade = useScrollFadeIn();
+  const mobileAppFade = useScrollFadeIn();
   const differentFade = useScrollFadeIn();
   const validationFade = useScrollFadeIn();
   const usersFade = useScrollFadeIn();
@@ -276,8 +278,7 @@ export default function Home() {
 
           {/* CAD Model Viewer */}
           <div className="mb-16">
-            <CADModelViewer
-              showPlaceholder={true}
+            <CADModelViewer modelPath="/circuit.stl"
               alt="HavenScan Central Hub with Sensor Modules"
             />
           </div>
@@ -321,6 +322,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Mobile App Showcase */}
+      <MobileAppShowcase
+        figmaUrl="https://merry-decay-69640409.figma.site/"
+      />
 
       {/* What Makes It Different */}
       <section className="py-20 px-6 sm:px-8 lg:px-12">
