@@ -126,7 +126,7 @@ export default function Home() {
               <p className="text-gray-600 text-sm">annual cost of pest infestations in residential properties</p>
             </div>
             <div className="bg-white border border-gray-200 rounded-xl p-6">
-              <div className="text-3xl font-bold text-gray-900 mb-2">35M</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">6.5M</div>
               <p className="text-gray-600 text-sm">housing units in the U.S. have inadequate conditions</p>
             </div>
           </div>
@@ -357,7 +357,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Predictive insights</h3>
               <p className="text-gray-600">
-                Not reactive. AI models identify trends and predict potential issues before they become problems, saving time and money.
+                Not reactive. AI models identify trends and predict potential issues before they become problems, saving time and money. Data is anonymized.
               </p>
             </div>
           </div>
@@ -391,7 +391,7 @@ export default function Home() {
             </div>
             <div className="bg-white border border-gray-200 rounded-xl p-6">
               <h3 className="font-semibold text-gray-900 mb-2">AI model trained</h3>
-              <p className="text-gray-600 text-sm">Trained LSTM neural network on actual housing data for pattern recognition</p>
+              <p className="text-gray-600 text-sm">Trained LSTM neural network on actual housing data for pattern recognition. Data is anonymized before being sent to the cloud</p>
             </div>
             <div className="bg-white border border-gray-200 rounded-xl p-6">
               <h3 className="font-semibold text-gray-900 mb-2">Framework aligned</h3>

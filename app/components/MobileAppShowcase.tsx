@@ -81,7 +81,7 @@ export default function MobileAppShowcase({ figmaUrl }: MobileAppShowcaseProps) 
         {/* Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Phone Frame with Figma Embed */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex flex-col items-center">
             <PhoneFrame>
               <iframe
                 src={embedUrl}
@@ -96,6 +96,10 @@ export default function MobileAppShowcase({ figmaUrl }: MobileAppShowcaseProps) 
                 title="HavenScan Mobile App"
               />
             </PhoneFrame>
+            {/* Encouragement Text with Wave Effect */}
+            <WaveText isVisible={isVisible} className="mt-8 text-center">
+              Try tapping through the app to see how it works!
+            </WaveText>
           </div>
 
           {/* Right: Explanatory Copy */}
@@ -126,7 +130,7 @@ export default function MobileAppShowcase({ figmaUrl }: MobileAppShowcaseProps) 
 // Phone Frame Component with SVG
 function PhoneFrame({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative w-full max-w-sm mx-auto">
+    <div className="relative w-full max-w-md mx-auto">
       {/* Phone Frame SVG - iPhone-like design */}
       <svg
         viewBox="0 0 375 812"
@@ -190,6 +194,35 @@ function FeaturePoint({ title, description }: { title: string; description: stri
         <p className="text-gray-600 leading-relaxed">{description}</p>
       </div>
     </div>
+  );
+}
+
+// Wave Text Component with letter-by-letter animation
+function WaveText({ 
+  children, 
+  isVisible, 
+  className = "" 
+}: { 
+  children: string; 
+  isVisible: boolean; 
+  className?: string;
+}) {
+  const characters = children.split("");
+  
+  return (
+    <p className={`text-lg sm:text-xl text-gray-600 font-medium ${className}`}>
+      {characters.map((char, index) => (
+        <span
+          key={index}
+          className={`inline-block ${isVisible ? "animate-wave-letter" : ""}`}
+          style={{
+            animationDelay: `${index * 0.05}s`,
+          }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </span>
+      ))}
+    </p>
   );
 }
 

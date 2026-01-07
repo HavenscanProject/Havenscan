@@ -22,8 +22,8 @@ export async function POST(req: Request) {
     const mailOptions = {
       from,
       to: "skywardeagles3@gmail.com",
-      subject: "New Waitlist Signup",
-      text: `A user signed up for the waitlist.\n\nEmail: ${email}\nUser type: ${userType || "N/A"}`,
+      subject: "New HavenScan Waitlist Signup",
+      text: `A user signed up for the waitlist for HavenScan!\n\nEmail: ${email}\nUser type: ${userType || "N/A"}`,
       html: `<p>A user signed up for the waitlist.</p><p><strong>Email:</strong> ${email}</p><p><strong>User type:</strong> ${userType || "N/A"}</p>`,
     } as any;
 

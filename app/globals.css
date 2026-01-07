@@ -85,3 +85,41 @@ body {
 .backface-hidden {
   backface-visibility: hidden;
 }
+
+@keyframes wave-once {
+  0% {
+    background-position: 0% 50%;
+    color: #6b7280;
+  }
+  50% {
+    background-position: 100% 50%;
+    color: #2563eb;
+  }
+  100% {
+    background-position: 0% 50%;
+    color: #6b7280;
+  }
+}
+
+.animate-wave-once {
+  background: linear-gradient(90deg, #6b7280, #2563eb, #6b7280);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: wave-once 1.6s ease-out 0.4s forwards;
+}
+
+@keyframes wave-letter {
+  0%, 100% {
+    transform: translateY(0px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-12px);
+    opacity: 1;
+  }
+}
+
+.animate-wave-letter {
+  animation: wave-letter 0.6s ease-out forwards;
+}
