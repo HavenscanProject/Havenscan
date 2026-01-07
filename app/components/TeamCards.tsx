@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useRef, useEffect, MouseEvent } from "react";
+import { useState, useRef, MouseEvent } from "react";
 
 export interface TeamMember {
   name: string;
-  role: string;
   bio: string;
   image?: string; // Optional image URL
   linkedin?: string;
@@ -103,7 +102,6 @@ function Tilt3DCards({
             </div>
 
             <h3 className="text-xl font-bold text-gray-900 text-center mb-2">{member.name}</h3>
-            <p className="text-blue-600 font-semibold text-center mb-4">{member.role}</p>
             <p className="text-gray-600 text-sm text-center leading-relaxed">{member.bio}</p>
           </div>
         </div>
@@ -176,7 +174,6 @@ function GlassmorphismCards({
               </div>
 
               <h3 className="text-xl font-bold text-gray-900 text-center mb-2">{member.name}</h3>
-              <p className="text-blue-600 font-semibold text-center mb-4">{member.role}</p>
               <p className="text-gray-700 text-sm text-center leading-relaxed">{member.bio}</p>
             </div>
           </div>
@@ -213,7 +210,6 @@ function FlipCards({ members }: { members: TeamMember[] }) {
                 {member.name.charAt(0)}
               </div>
               <h3 className="text-xl font-bold text-gray-900 text-center mb-2">{member.name}</h3>
-              <p className="text-blue-600 font-semibold text-center">{member.role}</p>
               <p className="text-gray-500 text-xs text-center mt-4">Click to learn more</p>
             </div>
 
@@ -223,7 +219,6 @@ function FlipCards({ members }: { members: TeamMember[] }) {
               style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
             >
               <h3 className="text-xl font-bold text-center mb-4">{member.name}</h3>
-              <p className="text-blue-100 font-semibold text-center mb-6">{member.role}</p>
               <p className="text-white/90 text-sm text-center leading-relaxed">{member.bio}</p>
             </div>
           </div>
@@ -275,7 +270,6 @@ function MagneticCards({ members }: { members: TeamMember[] }) {
               {member.name.charAt(0)}
             </div>
             <h3 className="text-xl font-bold text-gray-900 text-center mb-2">{member.name}</h3>
-            <p className="text-blue-600 font-semibold text-center mb-4">{member.role}</p>
             <p className="text-gray-600 text-sm text-center leading-relaxed">{member.bio}</p>
           </div>
         </div>
@@ -353,7 +347,6 @@ function GradientCards({
                 hoveredIndex === index ? "text-white/90" : "text-blue-600"
               }`}
             >
-              {member.role}
             </p>
             <p
               className={`text-sm text-center leading-relaxed transition-colors duration-500 ${
@@ -422,7 +415,6 @@ function FloatingCards({
                 {member.name.charAt(0)}
               </div>
               <h3 className="text-xl font-bold text-gray-900 text-center mb-2">{member.name}</h3>
-              <p className="text-blue-600 font-semibold text-center mb-4">{member.role}</p>
               <p className="text-gray-600 text-sm text-center leading-relaxed">{member.bio}</p>
             </div>
           </div>

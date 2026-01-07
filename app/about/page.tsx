@@ -1,34 +1,35 @@
 "use client";
 
 import Link from "next/link";
-import TeamCards, { TeamMember } from "../components/TeamCards";
+import dynamic from "next/dynamic";
+import type { TeamMember } from "../components/TeamCards";
+
+// Lazy load TeamCards for better performance (only load when needed)
+const TeamCards = dynamic(() => import("../components/TeamCards").then(mod => ({ default: mod.default })), {
+  ssr: true,
+});
 
 export default function About() {
   // Team members data - update with your actual team info
   const teamMembers: TeamMember[] = [
     {
-      name: "Team Member 1",
-      role: "Engineering & Development",
+      name: "Kingshuk Roy", 
       bio: "Hardware, software, and AI systems expert with a passion for building innovative solutions.",
     },
     {
-      name: "Team Member 2",
-      role: "Product & Design",
+      name: "Naren Pai",
       bio: "User experience and system architecture specialist focused on creating intuitive interfaces.",
     },
     {
-      name: "Team Member 3",
-      role: "Research & Validation",
+      name: "Vansh Jain",
       bio: "Data analysis and real-world testing professional ensuring product reliability and accuracy.",
     },
     {
-      name: "Team Member 4",
-      role: "Strategy & Operations",
+      name: "Madhuram Sharma",
       bio: "Business development and partnerships leader driving growth and strategic initiatives.",
     },
     {
-      name: "Team Member 5",
-      role: "Additional Role",
+      name: "Saicharan Karthikeyan",
       bio: "Contributing expertise to make HavenScan a comprehensive home health monitoring solution.",
     },
   ];

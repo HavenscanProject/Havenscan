@@ -3,7 +3,7 @@
 import { Suspense, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Environment, PerspectiveCamera, useGLTF, Html } from "@react-three/drei";
-import * as THREE from "three";
+import type { Group, Mesh } from "three";
 
 // Loading fallback
 function ModelLoader() {
@@ -21,7 +21,7 @@ function ModelLoader() {
 function Model({ modelPath }: { modelPath: string }) {
   try {
     const { scene } = useGLTF(modelPath);
-    const meshRef = useRef<THREE.Group>(null);
+    const meshRef = useRef<Group>(null);
 
     // Subtle rotation animation
     useFrame((state) => {
@@ -48,18 +48,18 @@ function Model({ modelPath }: { modelPath: string }) {
 
 // Placeholder geometry for when no model is available
 function PlaceholderModel() {
-  const meshRef = useRef<THREE.Mesh>(null);
+  const meshRef = useRef<Group>(null);
 
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.rotation.y = state.clock.elapsedTime * 0.3;
+      (meshRef.current as Group).rotation.y = state.clock.elapsedTime * 0.3;
     }
   });
 
   return (
-    <group>
+    <group ref={meshRef}>
       {/* Central hub representation */}
-      <mesh ref={meshRef} position={[0, 0, 0]}>
+      <mesh position={[0, 0, 0]}>
         <boxGeometry args={[1, 0.3, 1]} />
         <meshStandardMaterial color="#3b82f6" metalness={0.8} roughness={0.2} />
       </mesh>

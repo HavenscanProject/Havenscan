@@ -17,28 +17,31 @@ const CADModelViewer = dynamic(() => import("./components/CADModelViewer"), {
   ),
 });
 
+// Optimized scroll fade-in hook
 function useScrollFadeIn() {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    // Use passive observer for better performance
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          // Unobserve after first intersection for better performance
+          observer.unobserve(element);
         }
       },
       { threshold: 0.1 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(element);
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      observer.disconnect();
     };
   }, []);
 

@@ -3,8 +3,23 @@ const nextConfig = {
   experimental: {
     typedRoutes: true
   },
-  // Fallback for systems where SWC binary fails to load
   swcMinify: true,
+  compress: true,
+  poweredByHeader: false,
+  // Optimize images
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
+  // Optimize bundle
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
+    return config;
+  },
 };
 
 export default nextConfig;
