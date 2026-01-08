@@ -65,15 +65,16 @@ export default function MobileAppShowcase({ figmaUrl }: MobileAppShowcaseProps) 
   return (
     <section
       ref={ref}
-      className={`py-20 px-6 sm:px-8 lg:px-12 bg-white transition-all duration-1000 ${
+      className={`py-20 px-6 sm:px-8 lg:px-12 transition-all duration-1000 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
+      style={{ backgroundColor: "#1a2332" }}
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">From Detection to Action</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">From Detection to Action</h2>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             The HavenScan app transforms sensor data into clear insights and actionable guidance.
           </p>
         </div>
@@ -183,15 +184,15 @@ function FeaturePoint({ title, description }: { title: string; description: stri
   return (
     <div className="flex gap-4">
       <div className="flex-shrink-0 mt-1">
-        <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
-          <svg className="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="w-6 h-6 rounded-full bg-cyan-500/20 flex items-center justify-center">
+          <svg className="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
       </div>
       <div>
-        <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
-        <p className="text-gray-600 leading-relaxed">{description}</p>
+        <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
+        <p className="text-gray-300 leading-relaxed">{description}</p>
       </div>
     </div>
   );
@@ -210,7 +211,7 @@ function WaveText({
   const characters = children.split("");
   
   return (
-    <p className={`text-lg sm:text-xl text-gray-600 font-medium ${className}`}>
+    <p className={`text-lg sm:text-xl text-gray-300 font-medium ${className}`}>
       {characters.map((char, index) => (
         <span
           key={index}
@@ -225,4 +226,3 @@ function WaveText({
     </p>
   );
 }
-
