@@ -120,10 +120,50 @@ export default function CADModelViewer({
   alt = "HavenScan device model",
 }: CADModelViewerProps) {
   const [canvasReady, setCanvasReady] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
+  const [pointerPosition, setPointerPosition] = useState({ x: 50, y: 50 });
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Animate pointer position
+  useEffect(() => {
+    if (hasInteracted || !canvasReady) return;
+
+    const interval = setInterval(() => {
+      setPointerPosition({
+        x: 20 + Math.random() * 60, // 20% to 80% of container
+        y: 20 + Math.random() * 60,
+      });
+    }, 2000); // Move every 2 seconds
+
+    return () => clearInterval(interval);
+  }, [hasInteracted, canvasReady]);
+
+  // Detect user interaction
+  useEffect(() => {
+    if (hasInteracted || !containerRef.current) return;
+
+    const handleInteraction = () => {
+      setHasInteracted(true);
+    };
+
+    const container = containerRef.current;
+    container.addEventListener("mousedown", handleInteraction);
+    container.addEventListener("touchstart", handleInteraction);
+    container.addEventListener("wheel", handleInteraction);
+
+    return () => {
+      container.removeEventListener("mousedown", handleInteraction);
+      container.removeEventListener("touchstart", handleInteraction);
+      container.removeEventListener("wheel", handleInteraction);
+    };
+  }, [hasInteracted]);
 
   return (
     <div className="relative w-full aspect-square max-w-2xl mx-auto group">
-      <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-white via-gray-50 to-gray-100 shadow-2xl border border-gray-200">
+      <div 
+        ref={containerRef}
+        className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-white via-gray-50 to-gray-100 shadow-2xl border border-gray-200 cursor-pointer"
+      >
         <Canvas
           dpr={[1, 2]}
           onCreated={() => setCanvasReady(true)}
@@ -155,6 +195,41 @@ export default function CADModelViewer({
         </Canvas>
 
         {!canvasReady && <ModelLoader />}
+
+        {/* Animated pointer to encourage interaction */}
+        {canvasReady && !hasInteracted && (
+          <div
+            className="absolute pointer-events-none z-10 transition-all duration-1000 ease-in-out"
+            style={{
+              left: `${pointerPosition.x}%`,
+              top: `${pointerPosition.y}%`,
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            <div className="flex flex-col items-center">
+              <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg animate-bounce">
+                <svg
+                  className="w-8 h-8 text-blue-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 15l-2-5L5 21l1-6 6-1-5-2 5-5z"
+                  />
+                </svg>
+              </div>
+              <div className="mt-2 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-lg">
+                <p className="text-xs font-semibold text-gray-700 whitespace-nowrap">
+                  Drag to rotate
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
 
         {canvasReady && (
           <div className="absolute bottom-4 left-4 right-4 flex justify-between text-xs text-gray-500 bg-white/80 backdrop-blur px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">

@@ -48,23 +48,23 @@ export default function About() {
   const teamMembers: TeamMember[] = [
     {
       name: "Kingshuk Roy", 
-      bio: "11th Grader at Enloe High School. With a passion for building innovative solutions, Kingshuk is focused on hardware, software, and AI applications.",
+      bio: "Junior at Enloe High School. With a passion for building innovative solutions, Kingshuk is focused on hardware, software, and AI applications.",
     },
     {
       name: "Naren Pai",
-      bio: "11th Grader at Enloe High School. System architecture specialist using technical expertise to build real designs.",
+      bio: "Junior at Enloe High School. System architecture specialist using technical expertise to build real designs.",
     },
     {
       name: "Vansh Jain",
-      bio: "11th Grader at Enloe High School. Data analysis and real-world testing professional ensuring product reliability and accuracy.",
+      bio: "Junior at Enloe High School. Data analysis and real-world testing professional ensuring product reliability and accuracy.",
     },
     {
       name: "Madhuram Sharma",
-      bio: "11th Grader at Enloe High School. Business development and partnerships leader driving growth.",
+      bio: "Junior at Enloe High School. Business development and partnerships leader driving growth.",
     },
     {
       name: "Saicharan Karthikeyan",
-      bio: "11th Grader at North Carolina School of Science and Math Durham. Contributing expertise to make HavenScan a comprehensive home health monitoring solution.",
+      bio: "Junior at North Carolina School of Science and Math Durham. Contributing expertise to make HavenScan a comprehensive home health monitoring solution.",
     },
   ];
 

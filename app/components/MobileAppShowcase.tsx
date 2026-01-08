@@ -104,7 +104,7 @@ export default function MobileAppShowcase({ figmaUrl }: MobileAppShowcaseProps) 
           </div>
 
           {/* Right: Explanatory Copy */}
-          <div className="space-y-8">
+          <div className="space-y-24">
             <FeaturePoint
               title="Real-time alerts when conditions change"
               description="Get notified immediately when sensors detect changes in your home's environment, so you can respond quickly."
