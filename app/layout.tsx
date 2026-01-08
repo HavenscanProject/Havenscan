@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -14,9 +15,9 @@ export const metadata: Metadata = {
   description:
     "Detect hidden risks before they become costly or dangerous. A unified system for continuous home health monitoring.",
   icons: {
-    icon: "/HavenScanLogo.jpg",
-    shortcut: "/HavenScanLogo.jpg",
-    apple: "/HavenScanLogo.jpg",
+    icon: "/HavenScanLogo.png",
+    shortcut: "/HavenScanLogo.png",
+    apple: "/HavenScanLogo.png",
   },
 };
 
@@ -32,7 +33,13 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <div className="flex items-center justify-between h-16">
               <Link href="/" className="flex items-center gap-2 font-semibold text-gray-900">
-                <div className="w-2 h-2 rounded-full bg-blue-600"></div>
+                <Image 
+                  src="/HavenScanLogo.png" 
+                  alt="HavenScan Logo" 
+                  width={32} 
+                  height={32}
+                  className="w-8 h-8 object-contain"
+                />
                 <span>HavenScan</span>
               </Link>
               <div className="flex items-center gap-6">
@@ -49,7 +56,7 @@ export default function RootLayout({
             </div>
           </div>
         </nav>
-        <main className="pt-16">{children}</main>
+        <main className="pt-16">{children}</main> 
       </body>
     </html>
   );

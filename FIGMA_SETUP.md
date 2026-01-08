@@ -29,7 +29,7 @@ In `app/page.tsx`, find the `MobileAppShowcase` component (around line 328) and 
 
 ```tsx
 <MobileAppShowcase
-  figmaUrl="https://merry-decay-69640409.figma.site/"
+  figmaUrl="https://stuck-beauty-29109683.figma.site/"
 />
 ```
 
@@ -38,7 +38,7 @@ In `app/page.tsx`, find the `MobileAppShowcase` component (around line 328) and 
 Using a Figma site URL (already configured):
 ```tsx
 <MobileAppShowcase
-  figmaUrl="https://merry-decay-69640409.figma.site/"
+  figmaUrl="https://stuck-beauty-29109683.figma.site/"
 />
 ```
 

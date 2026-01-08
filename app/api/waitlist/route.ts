@@ -101,7 +101,7 @@ export async function POST(req: Request) {
     // #region agent log
     log({ location: "route.ts:70", message: "Error caught", hypothesisId: "A,B,C,D,E", data: { errorMessage: err?.message, errorCode: err?.code, errorStack: err?.stack?.substring(0, 200) } });
     // #endregion
-    console.error("/api/waitlist error:", err);
-    return new Response(JSON.stringify({ error: "Server error", details: process.env.NODE_ENV === "development" ? err?.message : undefined }), { status: 500 });
+    // console.error("/api/waitlist error:", err);
+    // return new Response(JSON.stringify({ error: "Server error", details: process.env.NODE_ENV === "development" ? err?.message : undefined }), { status: 500 });
   }
 }

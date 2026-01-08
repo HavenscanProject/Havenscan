@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import MobileAppShowcase from "./components/MobileAppShowcase";
 import CinematicHero from "./components/CinematicHero";
 import CountUpStat from "./components/CountUpStat";
+import Image from "next/image";
 
 // Dynamically import CAD viewer to avoid SSR issues
 const CADModelViewer = dynamic(() => import("./components/CADModelViewer"), {
@@ -293,7 +294,7 @@ export default function Home() {
 
       {/* Mobile App Showcase */}
       <MobileAppShowcase
-        figmaUrl="https://merry-decay-69640409.figma.site/"
+        figmaUrl="https://stuck-beauty-29109683.figma.site/"
       />
 
       {/* What Makes It Different */}
@@ -472,7 +473,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-cyan-500"></div>
+              <Image 
+                src="/HavenScanLogo.png" 
+                alt="HavenScan Logo" 
+                width={24} 
+                height={24}
+                className="w-6 h-6 object-contain"
+              />
               <span className="font-semibold text-white">HavenScan</span>
             </div>
             <div className="flex gap-6 text-sm text-gray-300">
